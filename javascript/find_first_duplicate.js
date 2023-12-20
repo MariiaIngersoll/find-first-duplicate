@@ -1,6 +1,22 @@
-function findFirstDuplicate(arr) {
-  // type your code here
-}
+// function findFirstDuplicate(arr) {
+//    for (let i = 0; i < arr.length - 1; i ++) {
+//       if (arr[i] === arr[i +1]) {
+//         return arr[i]
+//       }
+//    }
+//    return -1;
+// }
+
+  function findFirstDuplicate(arr) {
+     let dups = new Set();
+        for (let num of arr) {
+          if (dups.has(num)) {
+            return num;
+          }
+          dups.add(num);
+        }
+        return -1;
+      }
 
 if (require.main === module) {
   // add your own tests in here
